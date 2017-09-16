@@ -13,7 +13,7 @@ import (
 var (
 	// Version will be set at build time.
 	Version       = "0.0.0.dev"
-	listenAddress = flag.String("web.listen-address", "0.0.0.0:9161", "Address to listen on for web interface and telemetry.")
+	listenAddress = flag.String("web.listen-address", "0.0.0.0:9247", "Address to listen on for web interface and telemetry.")
 	metricsPath   = flag.String("web.telemetry-path", "/metrics", "Path under which to expose metrics.")
 	sphinxHost    = flag.String("sphinx.host", "localhost", "Hostname or IP address for Sphinx.")
 	sphinxPort    = flag.Int("sphinx.port", 9312, "TCP port for Sphinx.")

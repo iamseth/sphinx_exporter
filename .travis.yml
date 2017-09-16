@@ -1,7 +1,11 @@
 language: go
+sudo: required
 
+services:
+  - docker
 go:
-- 1.9
+  - 1.9
+
 install: true
 script: make docker
 deploy:
@@ -14,3 +18,13 @@ deploy:
   on:
     repo: iamseth/sphinx_exporter
     tags: true
+
+
+after_success:
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+  - if [ -z "${TRAVIS_TAG+x}" ]; then
+    export TAG=${TRAVIS_TAG}
+    else
+    export TAG='latest'
+    fi
+    docker push iamseth/sphinx_exporter:$TAG

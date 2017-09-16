@@ -56,5 +56,5 @@ For example:
 ```bash
 docker pull iamseth/sphinx-exporter
 
-docker run -d -p 9247:9247 iamseth/sphinx-exporter --sphinx.host=127.0.0.1
+docker run -d -p 9247:9247 iamseth/sphinx_exporter -sphinx.host 192.168.1.100
 ```

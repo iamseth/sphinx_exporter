@@ -49,12 +49,12 @@ TODO
 
 ## Using Docker
 
-You can deploy this exporter using the [iamseth/sphinx-exporter](https://registry.hub.docker.com/u/iamseth/sphinx-exporter) Docker image.
+You can deploy this exporter using the [iamseth/sphinx_exporter](https://registry.hub.docker.com/u/iamseth/sphinx_exporter) Docker image.
 
 For example:
 
 ```bash
-docker pull iamseth/sphinx-exporter
+docker pull iamseth/sphinx_exporter
 
 docker run -d -p 9247:9247 iamseth/sphinx_exporter -sphinx.host 192.168.1.100
 ```

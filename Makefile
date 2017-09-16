@@ -22,6 +22,7 @@ clean:
 
 docker: all
 	@docker build -t "iamseth/sphinx_exporter:${VERSION}" .
+	@docker tag iamseth/sphinx_exporter:${VERSION} iamseth/sphinx_exporter:latest
 
 .PHONY: all deps build test clean docker
 

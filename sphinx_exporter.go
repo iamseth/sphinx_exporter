@@ -33,7 +33,7 @@ func NewExporter(host string, port int) *Exporter {
 	return &Exporter{
 		host: host,
 		port: port,
-		up:   newGauge("up", "Was the last scrape of Sphinx successful?"),
+		up:   newGauge("up", "1 if we're able to scrape metrics, otherwise 0."),
 	}
 }
 
@@ -90,51 +90,51 @@ func (e *Exporter) Collect(ch chan<- prometheus.Metric) {
 		}
 		switch k {
 		case "uptime":
-			ch <- counter("uptime", "testing", f)
+			ch <- counter("uptime", "Time in seconds searchd has been running.", f)
 		case "connections":
-			ch <- counter("connections", "testing", f)
+			ch <- counter("connections", "Total number of connections made since startup.", f)
 		case "maxed_out":
-			ch <- counter("maxed_out", "testing", f)
+			ch <- counter("maxed_out", "Number of times connections were maxed out.", f)
 		case "command_search":
-			ch <- counter("command_search", "testing", f)
+			ch <- counter("command_search", "Sum of search commands since startup.", f)
 		case "command_excerpt":
-			ch <- counter("command_excerpt", "testing", f)
+			ch <- counter("command_excerpt", "Sum of excerpt commands since startup.", f)
 		case "command_update":
-			ch <- counter("command_update", "testing", f)
+			ch <- counter("command_update", "Sum of update commands since startup.", f)
 		case "command_delete":
-			ch <- counter("command_delete", "testing", f)
+			ch <- counter("command_delete", "Sum of delete commands since startup.", f)
 		case "command_keywords":
-			ch <- counter("command_keywords", "testing", f)
+			ch <- counter("command_keywords", "Sum of keywords commands since startup.", f)
 		case "command_persist":
-			ch <- counter("command_persist", "testing", f)
+			ch <- counter("command_persist", "Sum of persist commands since startup.", f)
 		case "command_status":
-			ch <- counter("command_status", "testing", f)
+			ch <- counter("command_status", "Sum of status commands since startup.", f)
 		case "command_flushattrs":
-			ch <- counter("command_flushattrs", "testing", f)
+			ch <- counter("command_flushattrs", "Sum of flushattrs commands since startup.", f)
 		case "agent_connect":
-			ch <- counter("agent_connect", "testing", f)
+			ch <- counter("agent_connect", "TODO", f)
 		case "agent_retry":
-			ch <- counter("agent_retry", "testing", f)
+			ch <- counter("agent_retry", "TODO", f)
 		case "queries":
-			ch <- counter("queries", "testing", f)
+			ch <- counter("queries", "Total number of queries run against Sphinx.", f)
 		case "dist_queries":
-			ch <- counter("dist_queries", "testing", f)
+			ch <- counter("dist_queries", "TODO", f)
 		case "query_wall":
-			ch <- counter("query_wall", "testing", f)
+			ch <- counter("query_wall", "Total time running queries.", f)
 		case "query_cpu":
-			ch <- counter("query_cpu", "testing", f)
+			ch <- counter("query_cpu", "TODO", f)
 		case "dist_wall":
-			ch <- counter("dist_wall", "testing", f)
+			ch <- counter("dist_wall", "Total time running distributed queries.", f)
 		case "dist_local":
-			ch <- counter("dist_local", "testing", f)
+			ch <- counter("dist_local", "TODO", f)
 		case "dist_wait":
-			ch <- counter("dist_wait", "testing", f)
+			ch <- counter("dist_wait", "TODO", f)
 		case "query_reads":
-			ch <- counter("query_reads", "testing", f)
+			ch <- counter("query_reads", "TODO", f)
 		case "query_readkb":
-			ch <- counter("query_readkb", "testing", f)
+			ch <- counter("query_readkb", "TODO", f)
 		case "query_readtime":
-			ch <- counter("query_readtime", "testing", f)
+			ch <- counter("query_readtime", "TODO", f)
 		}
 	}
 }

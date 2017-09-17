@@ -21,14 +21,14 @@ Export [Sphinx Search](http://sphinxsearch.com/) metrics to Prometheus.
 |sphinx_dist_local||
 |sphinx_dist_queries||
 |sphinx_dist_wait||
-|sphinx_dist_wall||
+|sphinx_dist_wall|Total time running distributed queries.|
 |sphinx_maxed_out|Number of times connections were maxed out.|
 |sphinx_queries|Total number of queries run against Sphinx.|
 |sphinx_query_cpu||
 |sphinx_query_readkb||
 |sphinx_query_reads||
 |sphinx_query_readtime||
-|sphinx_query_wall||
+|sphinx_query_wall|Total time running queries.|
 |sphinx_up|1 if we're able to scrape metrics, otherwise 0.|
 |sphinx_uptime|Time in seconds searchd has been running.|
 

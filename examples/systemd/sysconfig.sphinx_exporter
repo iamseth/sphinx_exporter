@@ -1,0 +1,1 @@
+OPTIONS="-sphinx.host localhost -sphinx.port 9312"

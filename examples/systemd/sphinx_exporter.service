@@ -1,0 +1,10 @@
+[Unit]
+Description=Sphinx Exporter
+
+[Service]
+User=sphinx_exporter
+EnvironmentFile=/etc/sysconfig/sphinx_exporter
+ExecStart=/usr/sbin/sphinx_exporter $OPTIONS
+
+[Install]
+WantedBy=multi-user.target

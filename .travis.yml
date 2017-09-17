@@ -11,8 +11,9 @@ script: make docker
 deploy:
   skip_cleanup: true
   provider: releases
-  file: ./dist/sphinx_exporter.linux-amd64
-  file: ./dist/sphinx_exporter.darwin-amd64
+  file:
+    - ./dist/sphinx_exporter.linux-amd64
+    - ./dist/sphinx_exporter.darwin-amd64
   api_key:
     secure: mkNBOdOrL2NKb4jWIEzPqW2yziq6N0RoF8J1DeL/LRd1SNrGNCtjF+U9MbnQswPyYMnUstKCEOBqDARV7UbwrZLHVEBBXrqDd655Hw5NvObBCln0ykGm+Au+zIgQxjTFGSfCeyO/o8tivVcUBQQZAbQuGCz0FMatnfdXdaoOgNodmOH8v8FGc98Yxcnnt0rSZmYpSesKOyDDEUbKnUI4piRNMATMiJj2j8uVEVADwGAP8Q3KKZ9ujlKvd4B8fctrQe6ZEdMuc6VD/9tMUBRr+H+utXpcL9rBcpGYlJU3IzGK4Y82/DsCRbdx3CaGEBKFeT5/1Wy/vZfpc7AS/45veow5b0zf9EyrlCcbzlXmnd9TsUW/ZEPD5hSljkAzqQhUS6o7QzOpBEUFfqCkPmma4d+d1Kt7y4dc8MWP+AENKaXtoh9ngSBJe0Qk/i6b0NXAzm8KImqNEFao4SaFR+x37jfX5By5/4WXeegsVRWwzshK7b5eMQ64q2aARlyvsBJwsmgjv2Vnl/t1iVYtkS9r8H3l3tN5eO31FyXYpccKG3qMMKHtsY3h9UWx7pBzQLqPjK+8gDZf0trQJ0q5KixLLNF1MGkqUbEcafkJIy8jQmS0YDreHgMihxY7Xmq2rHqMHx7PulGTfJQ457cc0/l3LcMEECx33HbDOUe+FGCHRvI=
   on:

@@ -1,4 +1,4 @@
-VERSION := 0.0.1
+VERSION := 0.0.2
 LDFLAGS := -X main.Version=$(VERSION)
 GOFLAGS := -ldflags "$(LDFLAGS) -s -w"
 GOARCH ?= $(subst x86_64,amd64,$(patsubst i%86,386,$(shell uname -m)))

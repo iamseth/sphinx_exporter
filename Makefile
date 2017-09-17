@@ -11,8 +11,8 @@ deps:
 	@dep ensure
 build:
 	@mkdir -p ./dist
-	@export GOOS=linux; go build $(GOFLAGS) -o ./dist/sphinx_exporter.linux-${GOARCH}
-	@export GOOS=darwin; go build $(GOFLAGS) -o ./dist/sphinx_exporter.darwin-${GOARCH}
+	@export CGO_ENABLED=0; export GOOS=linux; go build $(GOFLAGS) -o ./dist/sphinx_exporter.linux-${GOARCH}
+	@export CGO_ENABLED=0; export GOOS=darwin; go build $(GOFLAGS) -o ./dist/sphinx_exporter.darwin-${GOARCH}
 
 test:
 	@go test $$(go list ./... | grep -v /vendor/)

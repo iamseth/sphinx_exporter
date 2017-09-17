@@ -58,3 +58,14 @@ docker pull iamseth/sphinx_exporter
 
 docker run -d -p 9247:9247 iamseth/sphinx_exporter -sphinx.host 192.168.1.100
 ```
+
+## Installation
+
+```bash
+sudo useradd sphinx_exporter
+sudo curl -Ls "https://raw.githubusercontent.com/iamseth/sphinx_exporter/master/examples/systemd/sphinx_exporter.service" -o /etc/systemd/system/sphinx_exporter.service
+sudo curl -Ls "https://raw.githubusercontent.com/iamseth/sphinx_exporter/master/examples/systemd/sysconfig.sphinx_exporter" -o /etc/sysconfig/sphinx_exporter
+sudo curl -Ls "https://github.com/iamseth/sphinx_exporter/releases/download/0.0.2/sphinx_exporter.linux-amd64" -o /usr/sbin/sphinx_exporter
+sudo chmod 755 /usr/sbin/sphinx_exporter
+sudo sytemctl start sphinx_exporter
+```
